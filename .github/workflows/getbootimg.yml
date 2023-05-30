@@ -3,6 +3,8 @@ name: get_bootimg_from_payload.bin
 on:
   watch:
     types: [started]
+
+  workflow_dispatch:
     
 env:
   ROM_URL: https://get.pixelexperience.org/changelog/blueline/PixelExperience_Plus_blueline-13.0-20230504-2233-OFFICIAL.zip
