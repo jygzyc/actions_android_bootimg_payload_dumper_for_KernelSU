@@ -18,7 +18,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install git unzip wget
-        mkdir -p $GITHUB_WORKSPACE/kernel_workspace
+        mkdir -p $GITHUB_WORKSPACE/workspace
 
     - name: install Python 3.7
       uses: actions/setup-python@v1
