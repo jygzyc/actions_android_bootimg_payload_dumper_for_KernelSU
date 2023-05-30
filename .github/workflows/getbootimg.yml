@@ -13,6 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Setup build environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install git unzip wget
+        mkdir -p $GITHUB_WORKSPACE/kernel_workspace
 
     - name: install Python 3.7
       uses: actions/setup-python@v1
@@ -20,29 +25,28 @@ jobs:
           python-version: 3.7
     - name: Initialization environment 
       run: |
-        cd ~
         pip install bsdiff4
         python -m pip install protobuf
         
     - name: Clone the tools source code
       run: |
-       cd ~
+       cd $GITHUB_WORKSPACE/workspace
        git clone https://github.com/vm03/payload_dumper.git
        
   
     - name: Download the ROM
       run: |
-       cd ~
+       cd $GITHUB_WORKSPACE/workspace
        wget -O rom.zip $ROM_URL
    
     - name: unzip the ROM
       run: |
-       cd ~
+       cd $GITHUB_WORKSPACE/workspace
        unzip rom.zip -d payload_dumper
     
     - name: extract the payload.bin
       run: |
-       cd ~
+       cd $GITHUB_WORKSPACE/workspace
        cd payload_dumper
        python payload_dumper.py payload.bin
    
@@ -50,6 +54,6 @@ jobs:
     
     - name: Upload the bootimg to WeTransfer
       run: |
-        cd ~
+        cd $GITHUB_WORKSPACE/workspace
         curl -sL https://git.io/file-transfer | sh
-        ./transfer wet ~/payload_dumper/output/boot.img
+        ./transfer wet $GITHUB_WORKSPACE/workspace/payload_dumper/output/boot.img
