@@ -5,7 +5,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://hugeota.d.miui.com/21.3.31/miui_ALIOTH_21.3.31_25fc8f0d66_11.0.zip
+  ROM_URL: https://get.pixelexperience.org/changelog/blueline/PixelExperience_Plus_blueline-13.0-20230504-2233-OFFICIAL.zip
   TZ: Asia/Shanghai
 
 jobs:
