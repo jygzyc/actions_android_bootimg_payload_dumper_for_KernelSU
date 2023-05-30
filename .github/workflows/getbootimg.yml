@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     
 env:
-  ROM_URL: https://get.pixelexperience.org/changelog/blueline/PixelExperience_Plus_blueline-13.0-20230504-2233-OFFICIAL.zip
+  ROM_URL: https://dl.pixelexperience.org/pReQ82hp10NwTIy291zHtzQYlqemSiMXkiK2vxh6-PYILrvf5XWzvuDfCQQBpMmDv_DIIL7CvsmsvysewZMiXnfDixR5m9B08qWzwi8wCNo=/PixelExperience_Plus_blueline-13.0-20230504-2233-OFFICIAL.zip
   TZ: Asia/Shanghai
 
 jobs:
